@@ -2,10 +2,12 @@
     --main-font-fl: 'Inter-Variable';
     --accent-font-fl: 'PressStart2P';
     --font-weight-accent: 700;
+    --font-weight-text: 400;
     --font-size: 18px;
     --font-size-accent: 14px;
     --bg-color: #fff;
     --border-color: #000;
+    --text-stroke: #fff;
     --bg-image:
     repeating-linear-gradient(90deg, #d3d3d3 2px, #d3d3d3 4px, transparent 4px, transparent 6px),
     repeating-linear-gradient(0deg, #d3d3d3 2px, #d3d3d3 4px, transparent 4px, transparent 6px),
