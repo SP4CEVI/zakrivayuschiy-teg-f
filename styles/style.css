@@ -62,7 +62,7 @@
 }
 
 .card__title {
-  font-variation-settings: var(--font-weight-accent, 700);
+  font-variation-settings: 'wght' var(--font-weight-accent, 700);
   font-size: var(--font-size, 18px);
   padding-inline: 10px;
   line-height: 31px;
@@ -94,7 +94,7 @@
 }
 
 .filter-invert {
-  filter: invert(100%);
+  filter: invert(70%);
 }
 
 .filter-sepia-saturate {
@@ -119,13 +119,22 @@
   inset-inline-end: 25px;
   font-family: var(--accent-font-fl, "PressStart2P", fantasy);
   font-size: var(--font-size-accent, 14px);
-  text-shadow: 1px rgb(255, 255, 255, 0.5);
+  mix-blend-mode: hard-light;
+  opacity: 50%;
+  text-shadow: 0 0 5px var(--bg-color, #fff);
 }
 
-@supports (-webkit-text-stroke: 1px rgb(255, 255, 255, 0.5)) {
+@supports (text-stroke: 1px #fff) {
   .card__label {
-    -webkit-text-stroke: 1px rgb(255, 255, 255, 0.5);
-    text-shadow: 1px rgb(255, 255, 255, 0.5);
+    text-stroke: 1px #fff;
+    text-shadow: none;
+  }
+}
+
+@supports (-webkit-text-stroke: 1px var(--text-stroke, #fff)) {
+  .card__label {
+    -webkit-text-stroke: 1px var(--text-stroke, #fff);
+    text-shadow: none;
   }
 }
 
@@ -136,6 +145,8 @@
   padding-inline: 25px;
   padding-block: 25px;
   text-align: left;
+  font-variation-settings: 'wght' var(--font-weight-text, 400);
+  line-height: 1.3rem;
 }
 
 .card__buttons {
@@ -244,11 +255,13 @@
   fill: transparent;
 }
 
-.button-save {
-  margin-inline: 0;
-  margin-block: 0;
-  inline-size: clamp(257px, 15.2702rem + 3.3803vw, 293px);
-  block-size: 38px;
+.button__save {
+  display: flex;
+  gap: 8px;
+  block-size: 55px;
+  inline-size: 340px;
+  align-items: center;
+  justify-content: center;
 }
 
 .dialog {
@@ -260,8 +273,8 @@
   gap: 30px;
   padding-block-start: 30px;
   padding-block-end: 30px;
+  margin-top: clamp(14.875rem, 11.651rem + 13.7559vw, 24.03125rem);
   margin-bottom: clamp(14.875rem, 11.651rem + 13.7559vw, 24.03125rem);
-  padding: 0;
 }
 
 .dialog:not([open]) {
@@ -300,7 +313,7 @@ dialog::backdrop {
   background-color: rgb(0 0 0 / 0.75);
 }
 
-@media (width <= 375px) {
+@media (width < 376px) {
   .header {
     block-size: 100%;
   }
@@ -310,11 +323,14 @@ dialog::backdrop {
   }
 
   .card__title {
+    line-height: 21.78px;
     padding-block-start: 5px;
     padding-block-end: 4px;
   }
 
   .button__save {
     flex-direction: column;
+    block-size: 81px;
+    inline-size: 306px;
   }
 }
