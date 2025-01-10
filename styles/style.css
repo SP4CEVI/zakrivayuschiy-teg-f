@@ -328,9 +328,35 @@ dialog::backdrop {
     padding-block-end: 4px;
   }
 
+  .card__label {
+    inset-block-start: 23.5px;
+    inset-inline-end: 11px;
+  }
+
   .button__save {
     flex-direction: column;
     block-size: 81px;
     inline-size: 306px;
+  }
+
+  .floppy__icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .dialog {
+    inline-size: 341px;
+  }
+
+  .open__form {
+    inline-size: 257px;
+  }
+
+  .dialog__text {
+    inline-size: 198px;
+  }
+
+  .button__exit {
+    inline-size: 257px;
   }
 }
